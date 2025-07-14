@@ -2,6 +2,7 @@ name: build-test-deploy
 on: push
 jobs:
   build:
+    name: Builds the node.js application
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository
@@ -14,6 +15,7 @@ jobs:
       - run: npm run build
 
   test:
+    name: Runs the unit tests for the next.js application.
     needs: build
     runs-on: ubuntu-latest
     steps:
